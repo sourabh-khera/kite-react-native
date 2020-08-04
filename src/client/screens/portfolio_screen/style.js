@@ -1,11 +1,12 @@
 import {StyleSheet} from 'react-native';
 import {elevationShadowStyle} from '../../utils';
+
 const styles = StyleSheet.create({
   portfolioContainer: {
     flex: 1,
   },
   headerContainer: {
-    flex: 0.8,
+    flex: 1,
     backgroundColor: '#ebecee',
   },
   headerHeadingContainer: {
@@ -20,75 +21,37 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#434446',
   },
-  contentContainer: {
-    flex: 2,
-    backgroundColor: '#fff',
-  },
-  overlapContainer: {
-    height: 120,
-    borderRadius: 5,
-    position: 'absolute',
-    top: 150,
-    left: 13,
-    right: 13,
-    backgroundColor: '#fff',
-    ...elevationShadowStyle(4),
-  },
-  plContainer: {
-    flex: 1,
-    flexDirection: 'row',
-    marginLeft: 13,
-    marginRight: 13,
-  },
-  plContainerLeftPart: {
-    justifyContent: 'center',
-    flex: 1,
-  },
-  plContainerRightPart: {
-    flex: 1,
-    flexDirection: 'row',
+  tabBarLabel: {
+    borderColor: '#88abeb',
+    borderRadius: 10,
+    width: 18,
+    height: 18,
+    borderWidth: 2,
+    backgroundColor: '#88abeb',
+    marginLeft: 3,
+    marginBottom: 3,
     alignItems: 'center',
+    justifyContent: 'center',
   },
-  plContainerLeftPartText: {
-    color: '#c5c5c9',
-    fontSize: 18,
-    fontWeight: 'bold',
+  badgeIcon: {
+    color: '#fff',
+    fontSize: 12,
   },
-  plContainerRightPartText: {
-    color: '#c8939b',
-    fontSize: 18,
-    fontWeight: 'bold',
-  },
-  plContainerRightPartTextSmall: {
-    color: '#c8939b',
-    fontSize: 13,
-    fontWeight: 'bold',
-  },
-  investmentContainer: {
-    flex: 1.5,
+  labelContainer: {
     flexDirection: 'row',
-    marginRight: 13,
-    marginLeft: 13,
-    borderBottomColor: '#f5f5f5',
-    borderBottomWidth: 2,
   },
-  investmentContainerLeftPart: {
-    flex: 1,
-    justifyContent: 'center',
+  tabBar: {
+    backgroundColor: '#ebecee',
+    ...elevationShadowStyle(0, 'transparent'),
   },
-  investmentContainerRightPart: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  investmentContainerText: {
-    color: '#c5c5c9',
+  tabLabel: {
     fontWeight: 'bold',
-    paddingBottom: 3,
+    textTransform: 'none',
   },
-  investmentContainerNumber: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: '#434446',
+  tabIndicator: {
+    width: 100,
+    left: '13%',
+    backgroundColor: '#88abeb',
   },
 });
 

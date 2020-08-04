@@ -1,10 +1,27 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
+import HoldingsScreen from '../../screens/holdings_screen';
+import {elevationShadowStyle} from '../../utils';
+
 import styles from './style';
 
 const PortfolioScreen = () => {
+  const Tab = createMaterialTopTabNavigator();
+  const tabBarLabel = ({focused, color}) => {
+    return (
+      <View style={styles.labelContainer}>
+        <Text style={{color, fontWeight: 'bold'}}>Holdings</Text>
+        {focused ? (
+          <View style={styles.tabBarLabel}>
+            <Text style={styles.badgeIcon}>8</Text>
+          </View>
+        ) : null}
+      </View>
+    );
+  };
   return (
     <View style={styles.portfolioContainer}>
       <FocusAwareStatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
@@ -13,28 +30,23 @@ const PortfolioScreen = () => {
           <Text style={styles.headerText}>Portfolio</Text>
           <FontAwesome name={'angle-down'} size={36} color={'#434446'} />
         </View>
-      </View>
-      <View style={styles.contentContainer} />
-      <View style={styles.overlapContainer}>
-        <View style={styles.investmentContainer}>
-          <View style={styles.investmentContainerLeftPart}>
-            <Text style={styles.investmentContainerText}>Invested</Text>
-            <Text style={styles.investmentContainerNumber}>3,17,220.95</Text>
-          </View>
-          <View style={styles.investmentContainerRightPart}>
-            <Text style={styles.investmentContainerText}>Current</Text>
-            <Text style={styles.investmentContainerNumber}>3,16,220.95</Text>
-          </View>
-        </View>
-        <View style={styles.plContainer}>
-          <View style={styles.plContainerLeftPart}>
-            <Text style={styles.plContainerLeftPartText}>P&L</Text>
-          </View>
-          <View style={styles.plContainerRightPart}>
-            <Text style={styles.plContainerRightPartText}>-941.85</Text>
-            <Text style={styles.plContainerRightPartTextSmall}> -0.30 %</Text>
-          </View>
-        </View>
+
+        <Tab.Navigator
+          initialRouteName={'Holdings'}
+          tabBarOptions={{
+            style: styles.tabBar,
+            labelStyle: styles.tabLabel,
+            activeTintColor: '#88abeb',
+            inactiveTintColor: '#434446',
+            indicatorStyle: styles.tabIndicator,
+          }}>
+          <Tab.Screen
+            name="Holdings"
+            component={HoldingsScreen}
+            options={{tabBarLabel}}
+          />
+          <Tab.Screen name="Positions" component={HoldingsScreen} />
+        </Tab.Navigator>
       </View>
     </View>
   );
