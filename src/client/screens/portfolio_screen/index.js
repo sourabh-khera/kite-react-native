@@ -24,7 +24,11 @@ const PortfolioScreen = () => {
   };
   return (
     <View style={styles.portfolioContainer}>
-      <FocusAwareStatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
+      <FocusAwareStatusBar
+        barStyle="dark-content"
+        backgroundColor="#ebecee"
+        translucent={true}
+      />
       <View style={styles.headerContainer}>
         <View style={styles.headerHeadingContainer}>
           <Text style={styles.headerText}>Portfolio</Text>
