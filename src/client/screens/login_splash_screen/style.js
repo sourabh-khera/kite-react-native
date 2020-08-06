@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     ...elevationShadowStyle(4),
     height: '50%',
     position: 'absolute',
-    bottom: 40,
+    bottom: 35,
     left: 16,
     right: 16,
     borderRadius: 5,

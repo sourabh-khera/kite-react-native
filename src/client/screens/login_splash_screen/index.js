@@ -31,9 +31,11 @@ const loginSplash = () => {
             <Text style={styles.accountText}>
               {screens.loginSplash.accountText}
             </Text>
-            <Text style={styles.signUpText}>
-              {screens.loginSplash.signText}
-            </Text>
+            <TouchableOpacity onPress={() => {}}>
+              <Text style={styles.signUpText}>
+                {screens.loginSplash.signText}
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
         <View style={styles.loginTermsContainer}>
@@ -41,9 +43,11 @@ const loginSplash = () => {
             <Text style={styles.accountText}>
               {screens.loginSplash.agreeText}
             </Text>
-            <Text style={styles.signUpText}>
-              {screens.loginSplash.termsText}
-            </Text>
+            <TouchableOpacity onPress={() => {}}>
+              <Text style={styles.signUpText}>
+                {screens.loginSplash.termsText}
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </View>
