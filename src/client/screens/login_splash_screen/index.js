@@ -1,24 +1,28 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image, Platform} from 'react-native';
-import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
 import {screens} from '../../constants/messages';
 import styles from './style';
 
-const loginSplash = () => {
+const loginSplash = ({navigation}) => {
   return (
     <View style={styles.loginSplashContainer}>
       <FocusAwareStatusBar
-        barStyle={Platform.OS === 'android' ? 'light-content' : 'dark-content'}
+        barStyle={'dark-content'}
         backgroundColor="#000"
         translucent={true}
       />
       <View style={styles.imageContainer}>
-        <Icons name={'lightning-bolt'} size={60} color={'#1b33e8'} />
+        <Image
+          source={require('../../assets/images/streak_logo.png')}
+          style={styles.streakLogo}
+        />
       </View>
       <View style={styles.overlapContainer}>
         <View style={styles.buttonContainer}>
-          <TouchableOpacity style={styles.button} onPress={() => {}}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.push('Login')}>
             <Image
               source={require('../../assets/images/kite-logo.png')}
               style={styles.kiteLogo}

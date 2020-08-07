@@ -6,6 +6,7 @@ import {
 } from '../../utils';
 
 const kiteLogoAttributes = getImageWidthAndHeight(35, 30);
+const streakLogoAttributes = getImageWidthAndHeight(50, 45);
 const ratio = getPixelRatio();
 
 const styles = StyleSheet.create({
@@ -78,6 +79,10 @@ const styles = StyleSheet.create({
   termsContainer: {
     flexDirection: 'row',
     marginBottom: 30,
+  },
+  streakLogo: {
+    width: streakLogoAttributes.width / ratio,
+    height: streakLogoAttributes.height / ratio,
   },
 });
 
