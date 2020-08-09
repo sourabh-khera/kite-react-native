@@ -49,7 +49,7 @@ const Login = () => {
     <DismissKeyBoard>
       <View style={styles.loginContainer}>
         <FocusAwareStatusBar
-          barStyle={'dark-content'}
+          barStyle={'light-content'}
           backgroundColor="#1e69ce"
           translucent={true}
         />

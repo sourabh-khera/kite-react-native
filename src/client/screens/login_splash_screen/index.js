@@ -8,7 +8,7 @@ const loginSplash = ({navigation}) => {
   return (
     <View style={styles.loginSplashContainer}>
       <FocusAwareStatusBar
-        barStyle={'dark-content'}
+        barStyle={'light-content'}
         backgroundColor="#000"
         translucent={true}
       />
