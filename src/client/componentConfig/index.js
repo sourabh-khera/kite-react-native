@@ -1,3 +1,20 @@
+export const loginInputs = [
+  {
+    name: 'userId',
+    label: 'User ID',
+    styleClass: 'userIdError',
+    secure: false,
+    keyboardType: 'email-address',
+  },
+  {
+    name: 'password',
+    label: 'Password',
+    styleClass: 'passwordError',
+    secure: true,
+    keyboardType: 'default',
+  },
+];
+
 export const holdingOverlapConfig = [
   {
     investmentHeading: 'Invested',

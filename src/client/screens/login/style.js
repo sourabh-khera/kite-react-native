@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   },
   checkBoxContainer: {
     flexDirection: 'row',
-    marginTop: 25,
+    marginTop: 18,
     alignSelf: 'flex-start',
     marginLeft: 22,
     height: 15,
@@ -95,6 +95,18 @@ const styles = StyleSheet.create({
   bookingTextContainer: {
     marginTop: 10,
     alignItems: 'center',
+  },
+  userIdError: {
+    color: 'red',
+    fontSize: 12,
+    alignSelf: 'center',
+    width: '83%',
+  },
+  passwordError: {
+    color: 'red',
+    fontSize: 12,
+    alignSelf: 'center',
+    width: '83%',
   },
 });
 
