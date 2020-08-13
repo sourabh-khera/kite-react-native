@@ -6,8 +6,7 @@ import ProfileScreen from '../screens/profile_screen';
 import PortfolioScreen from '../screens/portfolio_screen';
 import OrdersScreen from '../screens/orders_screen';
 import WatchListScreen from '../screens/watchlist_screen';
-import LoginSplashScreen from '../screens/login_splash_screen';
-import Login from '../screens/login';
+import LoginScreen from '../screens/login_screen';
 
 const Stack1 = createStackNavigator();
 
@@ -65,8 +64,7 @@ export const LoginStack = () => {
   return (
     <NavigationContainer>
       <Stack6.Navigator screenOptions={{headerShown: false}}>
-        <Stack6.Screen name="LoginSplash" component={LoginSplashScreen} />
-        <Stack6.Screen name="Login" component={Login} />
+        <Stack6.Screen name="LoginSplash" component={LoginScreen} />
       </Stack6.Navigator>
     </NavigationContainer>
   );
