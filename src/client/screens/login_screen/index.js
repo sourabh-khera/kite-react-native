@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
 import {screens} from '../../constants/messages';
 import styles from './style';
 
-const login = ({navigation}) => {
+const Login = ({navigation, route}) => {
+  useEffect(() => {
+    if (route.params?.requestToken) {
+      console.log(route.params?.requestToken);
+    }
+  }, [route.params?.requestToken]);
   return (
     <View style={styles.loginSplashContainer}>
       <FocusAwareStatusBar
@@ -59,4 +64,4 @@ const login = ({navigation}) => {
   );
 };
 
-export default login;
+export default Login;
