@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
-import userReducer from './user.reducer';
-import postReducer from './posts.reducer';
-import commonReducer from './common.reducer';
+import userReducer from './user_reducer';
+import commonReducer from './common_reducer';
 
 const rootReducer = combineReducers({
   userReducer,
-  postReducer,
   commonReducer,
 });
 

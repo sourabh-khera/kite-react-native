@@ -5,7 +5,7 @@ import styles from './style';
 const loader = () => {
   return (
     <ActivityIndicator
-      size="small"
+      size="large"
       color="#000"
       style={styles.loaderContainer}
     />

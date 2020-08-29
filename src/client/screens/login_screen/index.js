@@ -2,20 +2,23 @@ import React, { useEffect } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
+import Loader from '../../components/loader';
 import { authenticateUser } from '../../actions/asyncActions/user_async';
 import { screens } from '../../constants/messages';
 import styles from './style';
 
-const Login = ({ navigation, route, authenticateUser }) => {
+const Login = ({ navigation, route, authenticateUser, showLoader }) => {
   useEffect(() => {
     if (route.params?.requestToken) {
       const { requestToken } = route.params;
       authenticateUser(requestToken);
       console.log(route.params?.requestToken);
     }
-  }, [route.params.requestToken]);
+  }, [authenticateUser, route.params]);
+  const renderLoader = showLoader ? <Loader /> : null;
   return (
     <View style={styles.loginSplashContainer}>
+      {renderLoader}
       <FocusAwareStatusBar
         barStyle={'light-content'}
         backgroundColor="#000"

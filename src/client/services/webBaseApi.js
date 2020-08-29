@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { AsyncStorage } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const API_URL = '/api/v1';
 
-const getConfig = () => {
-  const token = AsyncStorage.getItem('kite-token');
+const getConfig = async () => {
+  const token = await AsyncStorage.getItem('kite-token');
   const authToken = token ? { Authorization: token } : {};
 
   const config = {
