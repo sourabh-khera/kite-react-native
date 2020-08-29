@@ -1,15 +1,19 @@
-import React, {useEffect} from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { connect } from 'react-redux';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
-import {screens} from '../../constants/messages';
+import { authenticateUser } from '../../actions/asyncActions/user_async';
+import { screens } from '../../constants/messages';
 import styles from './style';
 
-const Login = ({navigation, route}) => {
+const Login = ({ navigation, route, authenticateUser }) => {
   useEffect(() => {
     if (route.params?.requestToken) {
+      const { requestToken } = route.params;
+      authenticateUser(requestToken);
       console.log(route.params?.requestToken);
     }
-  }, [route.params?.requestToken]);
+  }, [route.params.requestToken]);
   return (
     <View style={styles.loginSplashContainer}>
       <FocusAwareStatusBar
@@ -64,4 +68,10 @@ const Login = ({navigation, route}) => {
   );
 };
 
-export default Login;
+const mapStateToProps = ({ commonReducer }) => ({
+  showLoader: commonReducer.showLoader,
+});
+const mapDispatchToProps = {
+  authenticateUser,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

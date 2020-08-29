@@ -1,5 +1,4 @@
-import {PixelRatio} from 'react-native';
-import {object, string} from 'yup';
+import { PixelRatio } from 'react-native';
 
 export const getImageWidthAndHeight = (w, h) => {
   const image = {
@@ -18,13 +17,8 @@ export const elevationShadowStyle = (elevation, color = 'black') => {
   return {
     elevation,
     shadowColor: color,
-    shadowOffset: {width: 0, height: 0.5 * elevation},
+    shadowOffset: { width: 0, height: 0.5 * elevation },
     shadowOpacity: 0.3,
     shadowRadius: 0.8 * elevation,
   };
 };
-
-export const loginValidationSchema = object().shape({
-  userId: string().email('Invalid email').required('Required!'),
-  password: string().lowercase().trim().required('Required!'),
-});

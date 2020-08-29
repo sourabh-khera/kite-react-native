@@ -27,7 +27,6 @@ const loginWebView = ({navigation}) => {
             'https://kite.zerodha.com/connect/login?v=3&api_key=6bwuuggo99zd7v43',
         }}
         startInLoadingState={true}
-        thirdPartyCookiesEnabled={true}
         renderLoading={() => <Loader />}
         onNavigationStateChange={(navState) => fetchRequestToken(navState)}
       />

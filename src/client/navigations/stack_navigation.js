@@ -1,6 +1,6 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 import AppsScreen from '../screens/apps_screen';
 import ProfileScreen from '../screens/profile_screen';
 import PortfolioScreen from '../screens/portfolio_screen';
@@ -33,7 +33,7 @@ const Stack3 = createStackNavigator();
 
 export const PortfolioStack = () => {
   return (
-    <Stack3.Navigator screenOptions={{headerShown: false}}>
+    <Stack3.Navigator screenOptions={{ headerShown: false }}>
       <Stack3.Screen name="Portfolio" component={PortfolioScreen} />
     </Stack3.Navigator>
   );
@@ -64,7 +64,9 @@ const Stack6 = createStackNavigator();
 export const LoginStack = () => {
   return (
     <NavigationContainer>
-      <Stack6.Navigator screenOptions={{headerShown: false}}>
+      <Stack6.Navigator
+        initialRouteName="LoginSplash"
+        screenOptions={{ headerShown: false }}>
         <Stack6.Screen name="LoginSplash" component={LoginScreen} />
         <Stack6.Screen name="Login" component={LoginWebView} />
       </Stack6.Navigator>
