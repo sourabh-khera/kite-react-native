@@ -1,18 +1,22 @@
 import React from 'react';
-import {SafeAreaView, View} from 'react-native';
-import {WebView} from 'react-native-webview';
+import { SafeAreaView, View } from 'react-native';
+import { WebView } from 'react-native-webview';
 import Loader from '../../components/loader';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
 
 import styles from './style';
 
-const loginWebView = ({navigation}) => {
+const loginWebView = ({ navigation }) => {
   const fetchRequestToken = (navState) => {
     const requestToken =
       navState.url && navState.url.includes('request_token')
-        ? navState.url.split('?')[1].split('&')[0].split('=')[1]
+        ? navState.url
+            .split('?')[1]
+            .split('&')
+            .find((item) => item.includes('request_token'))
+            .split('=')[1]
         : null;
-    requestToken ? navigation.navigate('LoginSplash', {requestToken}) : null;
+    requestToken ? navigation.navigate('LoginSplash', { requestToken }) : null;
   };
   return (
     <SafeAreaView style={styles.container}>

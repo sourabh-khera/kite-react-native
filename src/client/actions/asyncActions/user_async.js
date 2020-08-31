@@ -6,7 +6,9 @@ import { webApiGet } from '../../services/webBaseApi';
 export const authenticateUser = (requestToken) => async (dispatch) => {
   try {
     dispatch(requestAPI(true));
-    const response = await webApiGet('/user/accessToken').request;
+    const response = await webApiGet(
+      `/user/accessToken?requestToken=${requestToken}`,
+    ).request;
     dispatch(receiveAPI(false));
     const {
       data: { data },

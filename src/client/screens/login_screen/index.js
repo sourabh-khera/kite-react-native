@@ -12,7 +12,6 @@ const Login = ({ navigation, route, authenticateUser, showLoader }) => {
     if (route.params?.requestToken) {
       const { requestToken } = route.params;
       authenticateUser(requestToken);
-      console.log(route.params?.requestToken);
     }
   }, [authenticateUser, route.params]);
   const renderLoader = showLoader ? <Loader /> : null;
@@ -77,4 +76,4 @@ const mapStateToProps = ({ commonReducer }) => ({
 const mapDispatchToProps = {
   authenticateUser,
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default React.memo(connect(mapStateToProps, mapDispatchToProps)(Login));

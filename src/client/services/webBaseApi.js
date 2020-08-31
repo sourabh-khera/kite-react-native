@@ -1,6 +1,7 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-community/async-storage';
 
+const BASE_URL = 'http://localhost:4000';
 const API_URL = '/api/v1';
 
 const getConfig = async () => {
@@ -22,7 +23,7 @@ const getConfig = async () => {
 export const webApiGet = (url) => {
   const config = getConfig();
   return {
-    request: axios.get(`${API_URL}${url}`, config.config),
+    request: axios.get(`${BASE_URL}${API_URL}${url}`, config.config),
   };
 };
 
@@ -30,7 +31,7 @@ export const webApiPost = (url, options) => {
   const config = getConfig();
   return {
     request: axios.post(
-      `${API_URL}${url}`,
+      `${BASE_URL}${API_URL}${url}`,
       JSON.stringify(options),
       config.config,
     ),
