@@ -1,7 +1,14 @@
 import React from 'react';
-import TabNavigator from './src/client/navigations/tab_navigation';
-import {LoginStack} from './src/client/navigations/stack_navigation';
+import { Provider } from 'react-redux';
+import store from './src/client/store';
+import AppEntry from './src/client/appEntry';
 
-const App = () => <LoginStack />;
+const App = () => {
+  return (
+    <Provider store={store}>
+      <AppEntry />
+    </Provider>
+  );
+};
 
 export default App;

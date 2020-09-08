@@ -1,12 +1,23 @@
-import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import React, { useEffect } from 'react';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { connect } from 'react-redux';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
-import {screens} from '../../constants/messages';
+import Loader from '../../components/loader';
+import { authenticateUser } from '../../actions/asyncActions/user_async';
+import { screens } from '../../constants/messages';
 import styles from './style';
 
-const login = ({navigation}) => {
+const Login = ({ navigation, route, authenticateUser, showLoader }) => {
+  useEffect(() => {
+    if (route.params?.requestToken) {
+      const { requestToken } = route.params;
+      authenticateUser(requestToken);
+    }
+  }, [authenticateUser, route.params]);
+  const renderLoader = showLoader ? <Loader /> : null;
   return (
     <View style={styles.loginSplashContainer}>
+      {renderLoader}
       <FocusAwareStatusBar
         barStyle={'light-content'}
         backgroundColor="#000"
@@ -59,4 +70,10 @@ const login = ({navigation}) => {
   );
 };
 
-export default login;
+const mapStateToProps = ({ commonReducer }) => ({
+  showLoader: commonReducer.showLoader,
+});
+const mapDispatchToProps = {
+  authenticateUser,
+};
+export default React.memo(connect(mapStateToProps, mapDispatchToProps)(Login));
