@@ -2,8 +2,8 @@ import React from 'react';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather';
-import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {NavigationContainer} from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 import {
   ProfileStack,
   WatchlistStack,
@@ -19,8 +19,8 @@ const TabNavigator = () => {
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName="Portfolio"
-        screenOptions={({route}) => ({
-          tabBarIcon: ({focused}) => {
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused }) => {
             let iconName;
             let color = focused ? '#1e90ff' : '#000';
             if (route.name === 'Watchlist') {
