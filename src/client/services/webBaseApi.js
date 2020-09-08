@@ -5,19 +5,26 @@ const BASE_URL = 'http://localhost:4000';
 const API_URL = '/api/v1';
 
 const getConfig = async () => {
-  const token = await AsyncStorage.getItem('kite-token');
-  const authToken = token ? { Authorization: token } : {};
+  try {
+    const accessToken = await AsyncStorage.getItem('kite-token');
+    const appToken = await AsyncStorage.getItem('app-token');
 
-  const config = {
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-      ...authToken,
-    },
-  };
-  return {
-    config,
-  };
+    const token = accessToken && appToken && `${appToken}:${accessToken}`;
+    const authToken = token ? { Authorization: token } : {};
+
+    const config = {
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        ...authToken,
+      },
+    };
+    return {
+      config,
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const webApiGet = (url) => {

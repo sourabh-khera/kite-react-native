@@ -14,9 +14,11 @@ export const authenticateUser = (requestToken) => async (dispatch) => {
       data: { data },
       status,
     } = response;
+    console.log(data, 'data-----');
     if (status === 200) {
       await AsyncStorage.setItem('kite-token', data.access_token);
-      dispatch(saveUserToken(data.access_token));
+      await AsyncStorage.setItem('app-token', data.app_token);
+      dispatch(saveUserToken(data.app_token));
     }
   } catch (error) {
     dispatch(receiveAPI(false));
