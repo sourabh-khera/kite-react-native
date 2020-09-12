@@ -1,19 +1,18 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 
 import styles from './style';
 
-const holdingsListContent = ({item}) => {
+const holdingsListContent = ({ item }) => {
   return (
     <View style={styles.contentListContainer}>
       <View style={styles.contentLeftPart}>
         <View style={styles.quantityAvgContainer}>
+          <Text style={styles.contentLeftPartLeftText}>Qty. </Text>
           <Text
             style={
-              styles.contentLeftPartLeftText
+              styles.contentLeftPartRightText
             }>{`${item.leftPartValue1} `}</Text>
-          <Text style={styles.contentLeftPartRightText}>Qty,</Text>
-          <View style={styles.bullet} />
           <Text style={styles.contentLeftPartLeftText}>Avg. </Text>
           <Text style={styles.contentLeftPartRightText}>
             {item.leftPartValue2}

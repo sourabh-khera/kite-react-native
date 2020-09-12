@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, FlatList} from 'react-native';
+import { Text, View, FlatList } from 'react-native';
 import OverlapDivision from '../../components/holdingsOverlapDivision';
 import ActionItems from '../../components/holdingsActions';
 import HoldingList from '../../components/holdingsListContent';
@@ -32,7 +32,7 @@ const Holdings = () => {
     );
   });
   const renderHoldingList = (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       <FlatList
         data={holdingListConfig}
         renderItem={HoldingList}
@@ -56,7 +56,6 @@ const Holdings = () => {
           </View>
           <View style={styles.plContainerRightPart}>
             <Text style={styles.plContainerRightPartText}>-941.85</Text>
-            <Text style={styles.plContainerRightPartTextSmall}> -0.30 %</Text>
           </View>
         </View>
       </View>

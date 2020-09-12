@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const commonProperties = {
   alignItems: 'center',
@@ -21,8 +21,7 @@ const styles = StyleSheet.create({
     paddingRight: 5,
   },
   actionText: {
-    color: '#86a9eb',
-    fontWeight: 'bold',
+    color: '#0075d2',
     fontSize: 12,
   },
 });

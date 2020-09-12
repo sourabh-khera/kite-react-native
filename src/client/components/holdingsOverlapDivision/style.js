@@ -1,13 +1,13 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   investmentContainerDivision: {
-    flex: 1,
+    width: '40%',
     justifyContent: 'center',
   },
   investmentContainerText: {
     color: '#c5c5c9',
-    fontWeight: 'bold',
+    fontSize: 16,
     paddingBottom: 3,
   },
   investmentContainerNumber: {

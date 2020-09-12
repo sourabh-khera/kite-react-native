@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import { View, Text } from 'react-native';
 import styles from './style';
 
-const overlapDivision = ({investmentHeading, investmentNumber}) => {
+const overlapDivision = ({ investmentHeading, investmentNumber }) => {
   return (
     <View style={styles.investmentContainerDivision}>
       <Text style={styles.investmentContainerText}>{investmentHeading}</Text>

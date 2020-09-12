@@ -32,11 +32,6 @@ export const holdingActionsConfig = [
     actionName: 'SEARCH',
     actionItemContainerClass: 'searchContainer',
   },
-  {
-    iconName: 'sliders',
-    actionName: 'FILTER',
-    actionItemContainerClass: 'filterContainer',
-  },
 ];
 
 export const holdingListConfig = [

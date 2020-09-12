@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {elevationShadowStyle} from '../../utils';
+import { StyleSheet } from 'react-native';
+import { elevationShadowStyle } from '../../utils';
 
 const styles = StyleSheet.create({
   holdingsContainer: {
@@ -25,18 +25,18 @@ const styles = StyleSheet.create({
   },
   plContainer: {
     flex: 1,
+    marginLeft: 39,
+    marginRight: 39,
     flexDirection: 'row',
-    marginLeft: 13,
-    marginRight: 13,
+    justifyContent: 'space-between',
   },
   plContainerLeftPart: {
     justifyContent: 'center',
-    flex: 1,
   },
   plContainerRightPart: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    width: '40%',
   },
   plContainerLeftPartText: {
     color: '#c5c5c9',
@@ -56,10 +56,11 @@ const styles = StyleSheet.create({
   investmentContainer: {
     flex: 1.5,
     flexDirection: 'row',
-    marginRight: 13,
-    marginLeft: 13,
-    borderBottomColor: '#f5f5f5',
-    borderBottomWidth: 3,
+    marginRight: 39,
+    marginLeft: 39,
+    borderBottomColor: '#ededed',
+    borderBottomWidth: 1,
+    justifyContent: 'space-between',
   },
   actionContainer: {
     flexDirection: 'row',
