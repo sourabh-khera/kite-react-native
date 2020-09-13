@@ -27,15 +27,15 @@ const getConfig = async () => {
   }
 };
 
-export const webApiGet = (url) => {
-  const config = getConfig();
+export const webApiGet = async (url) => {
+  const config = await getConfig();
   return {
     request: axios.get(`${BASE_URL}${API_URL}${url}`, config.config),
   };
 };
 
-export const webApiPost = (url, options) => {
-  const config = getConfig();
+export const webApiPost = async (url, options) => {
+  const config = await getConfig();
   return {
     request: axios.post(
       `${BASE_URL}${API_URL}${url}`,

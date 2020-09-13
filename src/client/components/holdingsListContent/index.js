@@ -10,41 +10,29 @@ const holdingsListContent = ({ item }) => {
         <View style={styles.quantityAvgContainer}>
           <Text style={styles.contentLeftPartLeftText}>Qty. </Text>
           <Text
-            style={
-              styles.contentLeftPartRightText
-            }>{`${item.leftPartValue1} `}</Text>
+            style={styles.contentLeftPartRightText}>{`${item.quantity} `}</Text>
           <Text style={styles.contentLeftPartLeftText}>Avg. </Text>
           <Text style={styles.contentLeftPartRightText}>
-            {item.leftPartValue2}
+            {item.average_price}
           </Text>
         </View>
         <Text style={styles.contentLeftPartMiddleText}>
-          {item.leftPartMiddle}
+          {item.tradingsymbol}
         </Text>
         <View style={styles.quantityAvgContainer}>
           <Text style={styles.contentLeftPartLeftText}>Invested </Text>
           <Text style={styles.contentLeftPartRightText}>
-            {item.leftPartValue3}
+            {item.quantity * item.average_price}
           </Text>
         </View>
       </View>
       <View style={styles.contentRightPart}>
-        <Text
-          style={
-            styles.contentRightPartTextCommon
-          }>{`${item.rightPartValue1} %`}</Text>
-        <Text style={styles.contentRightPartMiddleText}>
-          {item.rightPartValue2}
-        </Text>
+        <Text style={styles.contentRightPartTextCommon}>-17.50 %</Text>
+        <Text style={styles.contentRightPartMiddleText}>{item.pnl}</Text>
         <View style={styles.ltpContainer}>
           <Text style={styles.contentLeftPartLeftText}>LTP </Text>
-          <Text style={styles.contentLeftPartRightText}>
-            {item.rightPartValue3}
-          </Text>
-          <Text
-            style={
-              styles.contentRightPartTextCommon
-            }>{` (${item.rightPartValue4})%`}</Text>
+          <Text style={styles.contentLeftPartRightText}>{item.last_price}</Text>
+          <Text style={styles.contentRightPartTextCommon}>(-4.94) %</Text>
         </View>
       </View>
     </View>

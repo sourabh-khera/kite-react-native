@@ -1,10 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
 import HoldingsScreen from '../../screens/holdings_screen';
-import { elevationShadowStyle } from '../../utils';
+import PositionScreen from '../../screens/position_screen';
 
 import styles from './style';
 
@@ -32,7 +31,7 @@ const PortfolioScreen = () => {
             indicatorStyle: styles.tabIndicator,
           }}>
           <Tab.Screen name="Holdings" component={HoldingsScreen} />
-          <Tab.Screen name="Positions" component={HoldingsScreen} />
+          <Tab.Screen name="Positions" component={PositionScreen} />
         </Tab.Navigator>
       </View>
     </View>

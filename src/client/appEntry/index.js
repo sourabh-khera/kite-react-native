@@ -11,11 +11,10 @@ class AppEntry extends Component {
   state = { isLoading: false };
 
   async componentDidMount() {
-    const { saveAppToken } = this.props;
     this.setState({ isLoading: true });
     const token = await AsyncStorage.getItem('app-token');
     this.setState({ isLoading: false });
-    token ? saveAppToken(token) : null;
+    token ? this.props.saveUserToken(token) : null;
   }
 
   render() {
@@ -30,7 +29,7 @@ class AppEntry extends Component {
 const mapStateToProps = ({ userReducer }) => ({
   appToken: userReducer.appToken,
 });
-const mapDispatchToProps = (dispatch) => ({
-  saveAppToken: (token) => dispatch(saveUserToken(token)),
-});
+const mapDispatchToProps = {
+  saveUserToken,
+};
 export default connect(mapStateToProps, mapDispatchToProps)(AppEntry);

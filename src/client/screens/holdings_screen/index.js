@@ -1,17 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View, FlatList } from 'react-native';
+import { connect } from 'react-redux';
+import Loader from '../../components/loader';
 import OverlapDivision from '../../components/holdingsOverlapDivision';
 import ActionItems from '../../components/holdingsActions';
 import HoldingList from '../../components/holdingsListContent';
+import { getHoldings } from '../../actions/asyncActions/portfolio_async';
 import {
-  holdingListConfig,
   holdingOverlapConfig,
   holdingActionsConfig,
 } from '../../componentConfig';
 
 import styles from './style';
 
-const Holdings = () => {
+const Holdings = ({ getHoldings, holdings, showLoader }) => {
+  useEffect(() => {
+    getHoldings();
+  }, [getHoldings]);
   const renderOverlapContent = holdingOverlapConfig.map((item, idx) => {
     return (
       <OverlapDivision
@@ -34,15 +39,16 @@ const Holdings = () => {
   const renderHoldingList = (
     <View style={{ flex: 1 }}>
       <FlatList
-        data={holdingListConfig}
+        data={holdings.length && holdings}
         renderItem={HoldingList}
         keyExtractor={(item, index) => index.toString()}
       />
     </View>
   );
-
+  const renderLoader = showLoader ? <Loader /> : null;
   return (
     <View style={styles.holdingsContainer}>
+      {renderLoader}
       <View style={styles.extendedHeader} />
       <View style={styles.contentContainer}>
         <View style={styles.actionContainer}>{renderActions}</View>
@@ -63,4 +69,14 @@ const Holdings = () => {
   );
 };
 
-export default Holdings;
+const mapStateToProps = ({ portfolioReducer, commonReducer }) => ({
+  holdings: portfolioReducer.holdings,
+  showLoader: commonReducer.showLoader,
+});
+const mapDispatchToProps = {
+  getHoldings,
+};
+
+export default React.memo(
+  connect(mapStateToProps, mapDispatchToProps)(Holdings),
+);

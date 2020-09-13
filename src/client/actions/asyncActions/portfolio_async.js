@@ -11,6 +11,7 @@ export const getHoldings = () => async (dispatch) => {
       data: { data },
       status,
     } = response;
+    console.log(response, 'holdings---');
     if (status === 200) {
       dispatch(saveHoldings(data.holdings));
     }
