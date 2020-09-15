@@ -5,13 +5,13 @@ import { webApiGet } from '../../services/webBaseApi';
 export const getHoldings = () => async (dispatch) => {
   try {
     dispatch(requestAPI(true));
-    const response = await webApiGet('/portfolio/holdings').request;
+    const api = await webApiGet('/portfolio/holdings');
+    const response = await api.request;
     dispatch(receiveAPI(false));
     const {
       data: { data },
       status,
     } = response;
-    console.log(response, 'holdings---');
     if (status === 200) {
       dispatch(saveHoldings(data.holdings));
     }
@@ -26,7 +26,8 @@ export const getHoldings = () => async (dispatch) => {
 export const getPositions = () => async (dispatch) => {
   try {
     dispatch(requestAPI(true));
-    const response = await webApiGet('/portfolio/positions').request;
+    const api = await webApiGet('/portfolio/positions');
+    const response = await api.request;
     dispatch(receiveAPI(false));
     const {
       data: { data },

@@ -28,10 +28,14 @@ const holdingsListContent = ({ item }) => {
       </View>
       <View style={styles.contentRightPart}>
         <Text style={styles.contentRightPartTextCommon}>-17.50 %</Text>
-        <Text style={styles.contentRightPartMiddleText}>{item.pnl}</Text>
+        <Text style={styles.contentRightPartMiddleText}>
+          {item.pnl.toFixed(2)}
+        </Text>
         <View style={styles.ltpContainer}>
           <Text style={styles.contentLeftPartLeftText}>LTP </Text>
-          <Text style={styles.contentLeftPartRightText}>{item.last_price}</Text>
+          <Text style={styles.contentLeftPartRightText}>
+            {item.last_price.toFixed(2)}
+          </Text>
           <Text style={styles.contentRightPartTextCommon}>(-4.94) %</Text>
         </View>
       </View>

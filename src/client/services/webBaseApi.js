@@ -28,19 +28,27 @@ const getConfig = async () => {
 };
 
 export const webApiGet = async (url) => {
-  const config = await getConfig();
-  return {
-    request: axios.get(`${BASE_URL}${API_URL}${url}`, config.config),
-  };
+  try {
+    const config = await getConfig();
+    return {
+      request: axios.get(`${BASE_URL}${API_URL}${url}`, config.config),
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 export const webApiPost = async (url, options) => {
-  const config = await getConfig();
-  return {
-    request: axios.post(
-      `${BASE_URL}${API_URL}${url}`,
-      JSON.stringify(options),
-      config.config,
-    ),
-  };
+  try {
+    const config = await getConfig();
+    return {
+      request: axios.post(
+        `${BASE_URL}${API_URL}${url}`,
+        JSON.stringify(options),
+        config.config,
+      ),
+    };
+  } catch (error) {
+    console.log(error);
+  }
 };
