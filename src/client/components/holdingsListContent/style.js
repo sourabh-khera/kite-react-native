@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   contentListContainer: {
@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     color: '#c5c5c9',
     fontSize: 12,
     fontWeight: 'bold',
+    marginLeft: 5,
   },
   contentLeftPartRightText: {
     color: '#434446',

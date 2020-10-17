@@ -11,26 +11,25 @@ class AppEntry extends Component {
   state = { isLoading: false };
 
   async componentDidMount() {
-    const { saveAccessToken } = this.props;
     this.setState({ isLoading: true });
-    const token = await AsyncStorage.getItem('kite-token');
+    const token = await AsyncStorage.getItem('app-token');
     this.setState({ isLoading: false });
-    token ? saveAccessToken(token) : null;
+    token ? this.props.saveUserToken(token) : null;
   }
 
   render() {
     const { isLoading } = this.state;
-    const { accessToken } = this.props;
-    const renderScreen = accessToken ? <TabNavigator /> : <LoginStack />;
+    const { appToken } = this.props;
+    const renderScreen = appToken ? <TabNavigator /> : <LoginStack />;
     const renderComponent = isLoading ? <Loader /> : renderScreen;
     return <View style={{ flex: 1 }}>{renderComponent}</View>;
   }
 }
 
 const mapStateToProps = ({ userReducer }) => ({
-  accessToken: userReducer.accessToken,
+  appToken: userReducer.appToken,
 });
-const mapDispatchToProps = (dispatch) => ({
-  saveAccessToken: (token) => dispatch(saveUserToken(token)),
-});
+const mapDispatchToProps = {
+  saveUserToken,
+};
 export default connect(mapStateToProps, mapDispatchToProps)(AppEntry);

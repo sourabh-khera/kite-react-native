@@ -1,5 +1,5 @@
-import {StyleSheet} from 'react-native';
-import {elevationShadowStyle} from '../../utils';
+import { StyleSheet } from 'react-native';
+import { elevationShadowStyle } from '../../utils';
 
 const styles = StyleSheet.create({
   portfolioContainer: {
@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flex: 1,
-    backgroundColor: '#ebecee',
+    backgroundColor: '#ededed',
   },
   headerHeadingContainer: {
     flexDirection: 'row',
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     marginLeft: 13,
   },
   headerText: {
-    fontSize: 22,
+    fontSize: 24,
     fontWeight: 'bold',
     color: '#434446',
   },
@@ -33,25 +33,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  badgeIcon: {
-    color: '#fff',
-    fontSize: 12,
-  },
-  labelContainer: {
-    flexDirection: 'row',
-  },
   tabBar: {
     backgroundColor: '#ebecee',
     ...elevationShadowStyle(0, 'transparent'),
   },
   tabLabel: {
-    fontWeight: 'bold',
     textTransform: 'none',
+    fontSize: 16,
   },
   tabIndicator: {
-    width: 100,
+    width: '25%',
     left: '13%',
-    backgroundColor: '#88abeb',
+    backgroundColor: '#0075d2',
   },
 });
 
