@@ -1,12 +1,11 @@
-import {StyleSheet} from 'react-native';
+import { StyleSheet } from 'react-native';
 import {
   elevationShadowStyle,
   getImageWidthAndHeight,
   getPixelRatio,
 } from '../../utils';
 
-const kiteLogoAttributes = getImageWidthAndHeight(35, 30);
-const streakLogoAttributes = getImageWidthAndHeight(50, 45);
+const kiteLogoAttributes = getImageWidthAndHeight(60, 60);
 const ratio = getPixelRatio();
 
 const styles = StyleSheet.create({
@@ -14,75 +13,57 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
   },
-  imageContainer: {
-    flex: 0.5,
-    backgroundColor: '#edf1fb',
+  innerView: {
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  overlapContainer: {
-    backgroundColor: '#fff',
-    ...elevationShadowStyle(4),
-    height: '50%',
-    position: 'absolute',
-    bottom: 35,
-    left: 16,
-    right: 16,
-    borderRadius: 5,
-    alignItems: 'center',
-  },
-  buttonContainer: {
+    marginLeft: 33,
+    marginRight: 33,
     flex: 1,
-    alignItems: 'center',
-  },
-  button: {
-    paddingHorizontal: 50,
-    flexDirection: 'row',
-    ...elevationShadowStyle(4),
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    paddingVertical: 8,
-    marginTop: 50,
   },
   kiteLogo: {
     width: kiteLogoAttributes.width / ratio,
     height: kiteLogoAttributes.height / ratio,
   },
-  loginText: {
-    marginLeft: 7,
-    color: '#868786',
-    fontWeight: 'bold',
+  welcomeText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 24,
+    fontWeight: '500',
+    marginTop: 82,
   },
-  signUpContainer: {
+  orTextContainer: {
     flexDirection: 'row',
-    marginTop: 30,
-    height: 20,
-    alignItems: 'center',
+    marginTop: 11,
   },
-  accountText: {
-    color: '#868786',
-    fontSize: 11,
-    fontWeight: 'bold',
+  leftLine: {
+    borderWidth: 1,
+    borderColor: '#C4C4C4',
+    flex: 1,
+    alignSelf: 'center',
+  },
+  rightLine: {
+    borderWidth: 1,
+    borderColor: '#C4C4C4',
+    flex: 1,
+    alignSelf: 'center',
+  },
+  orText: {
+    fontFamily: 'Poppins-Regular',
+    fontSize: 12,
+    fontWeight: '500',
+    marginRight: 2,
+    marginLeft: 3,
+    color: '#C4C4C4',
+  },
+  signUpButton: {
+    backgroundColor: '#fff',
+    borderColor: '#C4C4C4',
+    borderWidth: 1,
   },
   signUpText: {
-    color: '#1b33e8',
-    marginLeft: 5,
-    fontSize: 11,
-    fontWeight: 'bold',
+    color: '#C4C4C4',
   },
-  loginTermsContainer: {
-    flex: 1,
-    justifyContent: 'flex-end',
-  },
-  termsContainer: {
-    flexDirection: 'row',
-    marginBottom: 30,
-  },
-  streakLogo: {
-    width: streakLogoAttributes.width / ratio,
-    height: streakLogoAttributes.height / ratio,
+  loginButton: {
+    ...elevationShadowStyle(9, '#0061E7'),
   },
 });
 

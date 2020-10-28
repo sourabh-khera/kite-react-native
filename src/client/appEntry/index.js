@@ -20,7 +20,7 @@ class AppEntry extends Component {
   render() {
     const { isLoading } = this.state;
     const { appToken } = this.props;
-    const renderScreen = appToken ? <TabNavigator /> : <LoginStack />;
+    const renderScreen = appToken ? <LoginStack /> : <LoginStack />;
     const renderComponent = isLoading ? <Loader /> : renderScreen;
     return <View style={{ flex: 1 }}>{renderComponent}</View>;
   }

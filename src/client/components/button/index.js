@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, Text} from 'react-native';
+import { TouchableOpacity, Text } from 'react-native';
 import styles from './style';
 
 const buttonWithOpacity = ({
@@ -9,9 +9,9 @@ const buttonWithOpacity = ({
   handleButtonClick,
 }) => (
   <TouchableOpacity
-    style={[styles.buttonDefaultStyles, {...buttonStyles}]}
+    style={[styles.buttonDefaultStyles, { ...buttonStyles }]}
     onPress={() => handleButtonClick()}>
-    <Text style={[styles.buttonTextDefaultStyles, {...buttonTextStyles}]}>
+    <Text style={[styles.buttonTextDefaultStyles, { ...buttonTextStyles }]}>
       {buttonText}
     </Text>
   </TouchableOpacity>
