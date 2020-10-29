@@ -8,8 +8,8 @@ import OrdersScreen from '../screens/orders_screen';
 import WatchListScreen from '../screens/watchlist_screen';
 import LoginScreen from '../screens/login_screen';
 import LoginWebView from '../screens/loginWebView_screen';
+import LoginLoader from '../components/loginLoader';
 import NoAccount from '../components/noAccount';
-// import LoginLoader from '../components/loginLoader';
 
 const Stack1 = createStackNavigator();
 
@@ -69,7 +69,7 @@ export const LoginStack = () => {
       <Stack6.Navigator
         initialRouteName="LoginSplash"
         screenOptions={{ headerShown: false }}>
-        <Stack6.Screen name="LoginSplash" component={NoAccount} />
+        <Stack6.Screen name="LoginSplash" component={LoginScreen} />
         <Stack6.Screen name="Login" component={LoginWebView} />
       </Stack6.Navigator>
     </NavigationContainer>

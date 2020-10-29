@@ -13,15 +13,18 @@ const box = ({
   afterAnchor,
   anchorStyles,
   restAnchorStyles,
+  loader,
 }) => {
   const renderText =
-    texts && texts.length
-      ? texts.map((item, idx) => (
+    texts && texts.length ? (
+      <View style={styles.textContainer}>
+        {texts.map((item, idx) => (
           <Text key={idx} style={styles.boxTextDefaultStyles}>
             {item}
           </Text>
-        ))
-      : null;
+        ))}
+      </View>
+    ) : null;
   const linkingText = anchorText ? (
     <View style={styles.anchorContainer}>
       <Text style={[styles.boxTitleDefaultStyles, { ...restAnchorStyles }]}>
@@ -37,9 +40,15 @@ const box = ({
       </Text>
     </View>
   ) : null;
+  const renderIcon = icon ? (
+    <Image source={icon} style={styles.loaderIcon} />
+  ) : (
+    loader
+  );
+
   return (
     <View style={[styles.boxDefaultStyles, { ...boxStyles }]}>
-      <Image source={icon} style={styles.loaderIcon} />
+      {renderIcon}
       <Text style={styles.boxTitleDefaultStyles}>{title}</Text>
       {linkingText}
       {renderText}

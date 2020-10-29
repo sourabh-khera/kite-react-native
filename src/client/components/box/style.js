@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
-    width: 294,
+    width: '80%',
     backgroundColor: '#FBFBFB',
     ...elevationShadowStyle(8),
   },
@@ -30,9 +30,7 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Poppins-Regular',
     fontWeight: '500',
-    marginTop: 5,
-    marginLeft: 15,
-    marginRight: 15,
+    lineHeight: 18,
   },
   loaderIcon: {
     width: loaderAttributes.width / ratio,
@@ -41,6 +39,7 @@ const styles = StyleSheet.create({
   anchorContainer: {
     flexDirection: 'row',
   },
+  textContainer: { alignItems: 'center', marginTop: 5 },
 });
 
 export default styles;

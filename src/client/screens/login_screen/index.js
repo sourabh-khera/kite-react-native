@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
@@ -24,7 +25,11 @@ const Login = ({ navigation, route }) => {
     <View style={styles.loginSplashContainer}>
       <View style={styles.innerView}>
         {renderLoader}
-        <FocusAwareStatusBar barStyle={'dark-content'} translucent={true} />
+        <FocusAwareStatusBar
+          barStyle={'light-content'}
+          backgroundColor="#0061E7"
+          translucent={true}
+        />
         <Image
           source={require('../../assets/images/kite-logo.png')}
           style={styles.kiteLogo}
@@ -34,7 +39,7 @@ const Login = ({ navigation, route }) => {
         </Text>
         <Button
           buttonText={screens.loginSplash.loginText}
-          handleButtonClick={() => {}}
+          handleButtonClick={() => navigation.push('Login')}
           buttonStyles={styles.loginButton}
         />
         <View style={styles.orTextContainer}>
@@ -53,4 +58,10 @@ const Login = ({ navigation, route }) => {
   );
 };
 
-export default Login;
+const mapStateToProps = ({ commonReducer }) => ({
+  showLoader: commonReducer.showLoader,
+});
+const mapDispatchToProps = {
+  authenticateUser,
+};
+export default React.memo(connect(mapStateToProps, mapDispatchToProps)(Login));

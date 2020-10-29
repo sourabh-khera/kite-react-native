@@ -1,7 +1,7 @@
 import React from 'react';
 import { SafeAreaView, View } from 'react-native';
 import { WebView } from 'react-native-webview';
-import Loader from '../../components/loader';
+import Loader from '../../components/loginLoader';
 import FocusAwareStatusBar from '../../components/focusStatusBar';
 
 import styles from './style';

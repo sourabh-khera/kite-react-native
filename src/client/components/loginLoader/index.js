@@ -1,5 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
+import { BubblesLoader } from 'react-native-indicator';
 import Box from '../box';
 import { screens } from '../../constants/messages';
 import styles from './style';
@@ -7,7 +8,7 @@ import styles from './style';
 const loginLoader = () => (
   <View style={styles.container}>
     <Box
-      icon={require('../../assets/images/icons8-swirl-24.png')}
+      loader={<BubblesLoader color="#C4C4C4" />}
       title={screens.loginSplash.loaderTitle}
       texts={[
         screens.loginSplash.loginLoaderText1,

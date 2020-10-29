@@ -6,6 +6,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     backgroundColor: '#fff',
+    position: 'absolute',
+    right: 0,
+    bottom: 0,
+    top: 0,
+    left: 0,
+    zIndex: 10000,
   },
 });
 
