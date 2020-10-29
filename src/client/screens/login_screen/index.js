@@ -24,11 +24,7 @@ const Login = ({ navigation, route }) => {
     <View style={styles.loginSplashContainer}>
       <View style={styles.innerView}>
         {renderLoader}
-        {/* <FocusAwareStatusBar
-        barStyle={'light-content'}
-        backgroundColor="#000"
-        translucent={true}
-      /> */}
+        <FocusAwareStatusBar barStyle={'dark-content'} translucent={true} />
         <Image
           source={require('../../assets/images/kite-logo.png')}
           style={styles.kiteLogo}
